@@ -5,7 +5,7 @@ plugins {
 ext {
 	profilesLocal = 'local'
 	profilesTest = 'test'
-	profilesActive = profilesLocal
+	profilesActive = profilesTest
 }
 
 processResources {
