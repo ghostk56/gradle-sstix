@@ -1,0 +1,22 @@
+rootProject.name = 'gradle-sstix'
+include('sstix-api')
+include('sstix-controller')
+include('sstix-service')
+include('sstix-repository')
+include('sstix-util')
+include('sstix-model')
+include('sstix-core')
+include('example-api')
+include('example-controller')
+include('example-service')
+include('example-repository')
+include('example-rest')
+
+['webs', 'libs'].each { parentDir ->
+    file(parentDir).eachDir { dir ->
+        if (!dir.name.startsWith('.')) { 
+            include dir.name
+            project(":${dir.name}").projectDir = dir
+        }
+    }
+}

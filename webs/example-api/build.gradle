@@ -1,0 +1,28 @@
+plugins {
+	id 'war'
+}
+
+ext {
+	profilesLocal = 'local'
+	profilesTest = 'test'
+	profilesActive = profilesLocal
+}
+
+processResources {
+	filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [
+		activeProfiles: profilesActive
+	]
+}
+
+bootWar {
+	archiveFileName = 'example-api.war'
+	destinationDirectory = project.rootProject.file("build")
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	implementation "com.google.code.gson:gson:${gsonVersion}"
+	implementation project(':example-controller')
+}

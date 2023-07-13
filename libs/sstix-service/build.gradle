@@ -1,0 +1,9 @@
+bootJar.enabled= false
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation project(':sstix-repository')
+	implementation project(':sstix-util')
+	api project(':sstix-core')
+}
