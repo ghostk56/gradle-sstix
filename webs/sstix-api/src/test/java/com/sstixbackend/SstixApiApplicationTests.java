@@ -8,6 +8,7 @@ class SstixApiApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("sstix api test");
 	}
 
 }

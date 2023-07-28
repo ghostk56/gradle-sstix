@@ -85,4 +85,9 @@ task 'apibootBuildImage' {
 	dependsOn(":sstix-api:bootBuildImage", ":example-api:bootBuildImage")
 }
 
+task 'sstixApiRunTest' {
+	group("app")
+	dependsOn(":sstix-api:test")
+}
+
 

@@ -11,3 +11,7 @@ dependencies {
 tasks.named("bootBuildImage") {
 	imageName = 'sstix:latest'
 }
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
